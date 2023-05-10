@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        container: {
+          center: true,
+          padding: '1rem',
+        }
+      }
+    }
+  </script>
+  <style>
+    #spinner {
+      display: none;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="bg-red-800 py-4">
+    <div class="container">
+      <h1 class="text-white text-4xl">QR Code Generator</h1>
+    </div>
+  </header>
+  <main class="py-4">
+    <div class="container">
+      <div class="md:flex">
+        <div class="w-full md:w-1/2 mr-24">
+          <form id="form">
+            <input id="url" type="text" class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark focus:outline-none mb-5" placeholder="Enter a URL">
+            <select id="size" class="w-full border-2 border-gray-200 rounded p-3 text-gray-dark focus:outline-none">
+              <option value="100">100x100</option>
+              <option value="200">200x200</option>
+              <option value="300" selected>300x300</option>
+              <option value="400">400x400</option>
+              <option value="500">500x500</option>
+              <option value="600">600x600</option>
+            </select>
+            <button class="bg-gray-600 rounded w-full text-white py-3 px-4 mt-5 hover:bg-black" type="submit">Generate QR Code</button>
+          </form>
+        </div>
+
+        <div class="w-full md:w-1/2 flex align-center justify-center mt-5 py-5 md:mt-0 md:py-0">
+          <div id="spinner">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><style>.spinner_d9Sa{transform-origin:center}.spinner_qQQY{animation:spinner_ZpfF 9s linear infinite}.spinner_pote{animation:spinner_ZpfF .75s linear infinite}@keyframes spinner_ZpfF{100%{transform:rotate(360deg)}}</style><path d="M12,1A11,11,0,1,0,23,12,11,11,0,0,0,12,1Zm0,20a9,9,0,1,1,9-9A9,9,0,0,1,12,21Z"/><rect class="spinner_d9Sa spinner_qQQY" x="11" y="6" rx="1" width="2" height="7"/><rect class="spinner_d9Sa spinner_pote" x="11" y="11" rx="1" width="2" height="9"/></svg>
+          </div>
+          <div id="qrcode">
+            <h2>Please enter a url, enjoy it!</h2>
+            <img src="img/pepeoke.png" width="200" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
