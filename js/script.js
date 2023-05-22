@@ -21,7 +21,7 @@ const generateQRCode = (e) => {
     });
 
     qrcode.clear(); // clear the code.
-    qrcode.makeCode("http://naver.com"); // make another code.
+    qrcode.makeCode(url); // make another code.
   }
 
 }
